@@ -55,6 +55,7 @@ requirements = {
         # VC related
         "fastdtw",
         "pyworld",
+        "epitran",
     ],
     "setup": ["numpy", "pytest-runner"],
     "test": [
