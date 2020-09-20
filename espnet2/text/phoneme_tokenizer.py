@@ -61,6 +61,10 @@ def epitran_g2p(text, language) -> List[str]:
     return phones
 
 
+def epitran_g2p_wld(text) -> List[str]:
+    return epitran_g2p(text, 'hin-Deva')
+
+
 class G2p_en:
     """On behalf of g2p_en.G2p.
 
@@ -106,8 +110,8 @@ class PhonemeTokenizer(AbsTokenizer):
             self.g2p = pypinyin_g2p
         elif g2p_type == "pypinyin_g2p_phone":
             self.g2p = pypinyin_g2p_phone
-        elif g2p_type == "epitran":
-            self.g2p = epitran_g2p
+        elif g2p_type == "epitran_wld":
+            self.g2p = epitran_g2p_wld
         else:
             raise NotImplementedError(f"Not supported: g2p_type={g2p_type}")
 
